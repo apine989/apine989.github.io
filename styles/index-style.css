@@ -1,0 +1,139 @@
+* {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+   background-color: #e7eef6;
+   padding-top: 10px;
+   padding-left: 30px;
+   width: 910px;
+}
+
+table {
+   background-color: white;
+}
+
+.table {
+   box-shadow: 1px 1px 15px 0.5px;
+}
+
+#tabletitle {
+   position: relative;
+   top: 15px;
+   text-align: center;
+}
+
+th {
+   display: inline-block;
+   width: 300px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   font-size: 24px;
+}
+
+td {
+   display: inline-block;
+   width: 300px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   font-size: 18px;
+   font-weight: 300;
+   text-align: center;
+}
+
+#l-student-color {
+   background-color: #5BB189;
+}
+
+#m-student-color {
+   background-color: #4b0082;
+}
+
+#h-student-color {
+   background-color: #ec632a;
+}
+
+th:nth-child(2), td:nth-child(2) {
+   background-color: #2f4f4f;
+   color: white;
+}
+
+td:nth-child(odd) {
+   background-color: white;
+}
+
+tr:nth-child(even) td {
+   background-color: rgba(47, 59, 64, 0.35);
+}
+
+tr:nth-child(7) td {
+   padding-top: 30px;
+   padding-bottom: 25px;
+}
+
+.mediumbold {
+   font-weight: 800;
+}
+
+.highbold {
+   font-size: 36px;
+   font-weight: 800;
+}
+
+button {
+   display: inline-block;
+   background-color: #3a6ba5;
+   color: white;
+   width: 275px;
+   height: 45px;
+   border: none;
+   font-size: 18px;
+   font-weight: 600;
+   transition-duration: 0.5s;
+}
+
+button:hover {
+   background-color: #437cbf;
+   box-shadow: 5px, 5px;
+}
+
+.confidence {
+   background-color: #2f4f4f;
+   color: white;
+   position: relative;
+   top: 30px;
+   padding: 1%;
+   padding-bottom: 3%;
+   padding-left: 25px;
+}
+
+#confidencetitle {
+   font-weight: 400;
+}
+
+#confidenceline {
+   position: relative;
+   bottom: 20px;
+}
+
+ul {
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+}
+
+li {
+   background-image: url("../images/checkmark.svg");
+   background-repeat: no-repeat;
+   background-size: 24px;
+   height: 24px;
+   padding: 1%;
+   padding-top: 8px;
+   padding-left: 45px;
+}
+
+a {
+   color: #7ee8f0;
+   font-style: italic;
+   font-weight: 800;
+}
