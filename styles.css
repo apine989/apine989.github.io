@@ -1,0 +1,143 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 10pt 30pt;
+    padding: 20pt 30pt;
+    background-color: #ddc8dc;
+    background-image: linear-gradient(#d9e1ea, #0f5e80);
+    height: 100vh;
+}
+
+a {
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff0066 !important;
+    scale: 100%;
+    transition: 0.3s;
+}
+
+h1 {
+    color: #0086bf;
+}
+
+h2 {
+    color: white;
+    padding: 8pt;
+    background-color: #0f5e80;
+    border-radius: 8pt;
+    height: 30pt;
+    max-width: 225pt;
+    margin: 0 auto;
+}
+
+header {
+    -webkit-backdrop-filter: blur(10pt);
+    background-color: #2291e049;
+    box-shadow: rgba(94, 94, 94, 0.436) 0pt 0pt 30pt 0.5pt;
+    color: #ffffff;
+    padding: 9pt;
+    margin: -3pt 5pt 30pt 5pt;
+    border-radius: 13pt;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+header:hover {
+    background-color: #3c444949;
+    transition: 0.2s;
+}
+
+header:not(:hover) {
+    transition: 0.2s;
+    transition-delay: 0.1s;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20pt;
+}
+
+.nav-text {
+    color: #d9e1ea;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 30pt;
+}
+
+/* Redo */
+#head-deco {
+    -webkit-transform: translate(-54pt, 70pt) scale(30%);
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    cursor: default !important;
+    z-index: 1;
+}
+
+input {
+    height: 20pt;
+    border-style: none;
+    border-radius: 5pt;
+    text-indent: 5pt;
+}
+
+button {
+    margin-top: 8pt;
+}
+
+#homeview ul {
+    background-color: #cfebf73f;
+    -webkit-backdrop-filter: blur(10pt);
+    margin: 10pt auto;
+    border-radius: 5pt;
+    line-height: 18pt;
+    padding-top: 9pt;
+}
+
+.cl {
+    columns: 3;
+}
+
+.box {
+    height: 240pt;
+    max-width: 215pt;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.box:hover {
+    scale: 102%;
+    color: white !important;
+    background-color: rgba(86, 86, 86, 0.206) !important;
+    transition: 0.2s;
+}
+
+.box:not(:hover) {
+    scale: 100%;
+    transition: 0.2s;
+}
+
+#creditsbtn:hover #popover {
+    display: block;
+}
+
+#popover {
+    display: none;
+    position: absolute;
+    right: 40%;
+    padding: 10px;
+    color: #000000;
+    box-shadow: 0 3pt 3pt rgba(0, 0, 0, 0.1);
+    background-color: #ffffff7c;
+    -webkit-backdrop-filter: blur(10pt);
+    border: 1.3pt solid #000000;
+    border-radius: 5pt;
+}
