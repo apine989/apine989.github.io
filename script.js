@@ -6,7 +6,7 @@ initialize();
 function initialize() {
     dataGetLocalOrFetch();
     renderHomeView();
-    console.log(songData);
+    // console.log(songData);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -29,7 +29,9 @@ creditctr.addEventListener("mouseout", () => {
 });
 
 function dataGetLocalOrFetch() {
-    const storedData = localStorage.getItem(key);;
+    const storedData = localStorage.getItem(key);
+
+    console.log("Stored data: " + storedData);
 
     if (storedData) {
         songData = JSON.parse(storedData);
@@ -49,12 +51,17 @@ function fetchApi() {
         axios.get(songs),
     ])
         .then(axios.spread(function (genresFetch, artistsFetch, songsFetch) {
-            const g = genresFetch.data;
-            const a = artistsFetch.data;
-            const s = songsFetch.data;
+            const g = JSON.stringify(genresFetch.data);
+            const a = JSON.stringify(artistsFetch.data);
+            const s = JSON.stringify(songsFetch.data);
 
-            let fetched = JSON.parse({genres: {g}, artists: {a}, songs: [s]});
-            localStorage.setItem(key, JSON.stringify(songData));
+            // console.log("Genres: " + g);
+            // console.log("Artists: " + a);
+            // console.log("Songs: " + s);
+            let fetched = { genres: JSON.parse(g), artists: JSON.parse(a), songs: JSON.parse(s) };
+            // console.log(fetched);
+            localStorage.setItem(key, JSON.stringify(fetched));
+            // console.log(JSON.parse(localStorage.getItem(key)));
 
             return fetched;
         }));
@@ -83,6 +90,7 @@ function showTopGenres(data) {
         });
     } else {
         alert("No top genre list available");
+        // console.log("Error loading top genres");
     }
 }
 
@@ -98,6 +106,7 @@ function showTopArtists(data) {
         });
     } else {
         alert("No top artists list available");
+        // console.log("Error loading top artists");
     }
 }
 
