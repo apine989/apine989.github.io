@@ -1,12 +1,20 @@
 const key = "songdata";
-let songData;
+let songData = {};
 let content = document.getElementById("content");
 initialize();
 
 function initialize() {
-    dataGetLocalOrFetch();
-    renderHomeView();
-    // console.log(songData);
+    const storedData = localStorage.getItem(key);
+    // console.log("Stored data: " + storedData);
+
+    if (localStorage.length != 0) {
+        console.log("Is using local storage")
+        songData = JSON.parse(storedData);
+        renderHomeView();
+    } else {
+        console.log("Is fetching data");
+        fetchApi();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -28,18 +36,6 @@ creditctr.addEventListener("mouseout", () => {
     }, 5000);
 });
 
-function dataGetLocalOrFetch() {
-    const storedData = localStorage.getItem(key);
-
-    console.log("Stored data: " + storedData);
-
-    if (storedData) {
-        songData = JSON.parse(storedData);
-    } else {
-        songData = fetchApi();
-    }
-}
-
 function fetchApi() {
     const genres = "https://www.randyconnolly.com/funwebdev/3rd/api/music/genres.php";
     const artists = "https://www.randyconnolly.com/funwebdev/3rd/api/music/artists.php";
@@ -58,12 +54,11 @@ function fetchApi() {
             // console.log("Genres: " + g);
             // console.log("Artists: " + a);
             // console.log("Songs: " + s);
-            let fetched = { genres: JSON.parse(g), artists: JSON.parse(a), songs: JSON.parse(s) };
+            songData = { genres: JSON.parse(g), artists: JSON.parse(a), songs: JSON.parse(s) };
             // console.log(fetched);
-            localStorage.setItem(key, JSON.stringify(fetched));
-            // console.log(JSON.parse(localStorage.getItem(key)));
-
-            return fetched;
+            localStorage.setItem(key, JSON.stringify(songData));
+            // console.log("Local storage: " + localStorage.getItem(key));
+            renderHomeView();
         }));
 }
 
@@ -73,9 +68,9 @@ function clearContent() {
 }
 
 function renderHomeView() {
-    showTopGenres(songData.genres);
-    showTopArtists(songData.artists);
-    showPopSongs(songData.songs);
+        showTopGenres(songData.genres);
+        showTopArtists(songData.artists);
+        showPopSongs(songData.songs);
 }
 
 function showTopGenres(data) {
