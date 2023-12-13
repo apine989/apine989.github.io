@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>★ Music</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="navbtn" id="homeview">Home</a></li>
+                <li><a href="#" class="navbtn" id="searchview">Search/Browse Songs</a></li>
+                <li><a href="#" class="navbtn" id="playlistview">Playlist</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="filterInput" placeholder="Filter...">
+        <div id="creditctr">
+            <button id="creditsbtn">Credits</button>
+            <div id="popover">
+                <p>Anferne Pineda </p><a href="https://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php"
+                    id="github">GitHub</a>
+            </div>
+        </div>
+    </header>
+    <div id="content">
+        <section id="homeview">
+            <div class="cl">
+                <div id="tgt">
+                    <h2>⬆︎ Top Genres</h2>
+                </div>
+                <ul class="box" id="topgenres"></ul>
+                <div id="tat">
+                    <h2>⬆︎ Top Artists</h2>
+                </div>
+                <ul class="box" id="topartists"></ul>
+                <div id="tpt">
+                    <h2>♥︎ Most Popular Songs</h2>
+                </div>
+                <ul class="box" id="popsongs">
+                </ul>
+            </div>
+        </section>
+        <!-- Incomplete-->
+        <section id="searchview" style="display: none;">
+            <h2>Search/Browse Songs</h2>
+            <ul id="list"></ul>
+        </section>
+        <div id="filter-opt">
+            <label>
+                <input type="radio" name="filter" value="title" checked>
+                Filter by Title
+            </label>
+            <label>
+                <input type="radio" name="filter" value="artist">
+                Filter by Artist
+            </label>
+            <label>
+                <input type="radio" name="filter" value="genre">
+                Filter by Genre
+            </label>
+            <button>Clear Filters</button>
+        </div>
+        <section id="songview" style="display: none;">
+            <h2>Song Details</h2>
+            <canvas id="chart"></canvas>
+        </section>
+        <section id="playlistview" style="display: none;">
+            <h2>Playlist</h2>
+        </section>
+        <div id="playlistsnackbar" class="snackbar" style="display: none;">
+            <p>Added to playlist</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html
